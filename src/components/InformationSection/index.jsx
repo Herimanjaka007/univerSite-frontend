@@ -51,7 +51,7 @@ const InformationSection = () => {
                     </div> */}
                     </div>
                 </div>
-                <img src={bg} alt="ito leizy" className="img-fluid" />
+                <img src={bg} alt="ito leizy" className="w-100" />
             </section>
             <section className="faq-section section-padding py-5" id="section_4" style={{ background: "white " }}>
                 <div className="container">
