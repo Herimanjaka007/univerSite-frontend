@@ -2,7 +2,7 @@ const UniversityCard = ({ img, nom, adress }) => {
     return (
 
         <div className="col-lg-3 col-md-6 mt-3">
-            <div className="card">
+            <div className="card p-3">
                 <img
                     src={img}
                     className="card-img-top"
