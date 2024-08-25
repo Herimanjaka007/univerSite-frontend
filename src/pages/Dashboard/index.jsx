@@ -72,7 +72,7 @@ const Dashboard = () => {
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to="/parcours" className="nav-link_">
+                                            <Link to="" className="nav-link_">
                                                 PARCOURS
                                             </Link>
                                         </li>
