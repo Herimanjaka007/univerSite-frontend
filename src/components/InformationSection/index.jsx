@@ -1,5 +1,7 @@
 import faqImage from "../../assets/faq_graphic.svg";
 import bg from "../../assets/white-wave-bg.svg";
+import { Link } from "react-router-dom";
+import ButtonCustom from "../ButtonCustom";
 
 const InformationSection = () => {
     return (
@@ -20,7 +22,7 @@ const InformationSection = () => {
                                 intérêts, vos compétences, vos objectifs de carrière et vos
                                 préférences géographiques.
                             </p>
-                            <ul className="ul-text mt-5">
+                            <ul className="ul-text my-5">
                                 <li className="li-list">
                                     <i className="fas fa-check-circle" /> Plus de 1349 formations
                                 </li>
@@ -33,6 +35,7 @@ const InformationSection = () => {
                                     professionnelles
                                 </li>
                             </ul>
+                            <Link to="/signup"><ButtonCustom buttonText="J'inscris mon etablissement" /></Link>
                         </div>
                         {/* <div className="col-md-6 col-sm-12 mt-3">
                         <p className="text">
