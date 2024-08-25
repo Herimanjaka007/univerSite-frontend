@@ -43,7 +43,7 @@ const NavBar = () => {
                             </li>
                         </ul>
                         <div className="d-flex gap-3 ms-auto">
-                            <Link>
+                            <Link to="/signup">
                                 <button
                                     className="btn btn-secondary"
                                 >
