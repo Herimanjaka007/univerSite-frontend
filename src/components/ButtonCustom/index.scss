@@ -1,0 +1,40 @@
+$gradient-start: #00c6ff;
+$gradient-end: #0072ff;
+
+.btn-custom {
+   /* reset */
+   -webkit-appearance: none;
+   border: 0;
+   outline: 0;
+   /* styles */
+//    position: relative;
+   background: linear-gradient(45deg, $gradient-start 10%, $gradient-end 90%);
+   background-size: 200% 100%;
+   padding: .5rem 1.5rem;
+   color: white;
+   border-radius: 10px;
+   transition: .3s;
+   
+   &:hover {
+      animation: bruh 1.5s linear infinite;
+   }
+
+   &:disabled{
+    opacity: .5;
+    cursor: not-allowed;
+   }
+}
+
+@keyframes bruh {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
