@@ -102,12 +102,11 @@ $gradient-end: #0072ff;
 }
 
 .information,
-.list,
-// .banner,
-footer {
-  // background-color: rgba(1, 1, 36, 0.932);
-  background: linear-gradient(45deg, #141d30, #243B55);
-  color: white;
+.list{
+// background-color: rgba(1, 1, 36, 0.932);
+background: linear-gradient(45deg, #19293a, #111);
+// background: linear-gradient(45deg, #29323c, #485563);
+;
 }
 
 .animated {
