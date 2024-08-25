@@ -4,6 +4,7 @@ import vite from "/vite.svg"
 import { useState } from "react";
 import Alert from "../Alert";
 import { getUserId } from "/src/utils/function";
+import { URL } from "../../utils/url";
 
 const Login = () => {
     const [error, setError] = useState(null);
@@ -19,7 +20,7 @@ const Login = () => {
 
 
         try {
-            const response = await fetch('http://localhost:8000/users/token/', {
+            const response = await fetch(`${URL}/users/token/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ const Login = () => {
                 )
             }
             else {
-                throw new Error("Nom d'utilisateur ou Mot de passe invalide");
+                setError("Nom d'utilisateur ou Mot de passe invalide");
             }
         } catch {
             setError('Erreur de reseau, Veuillez ressayez ulterieurement');
@@ -52,7 +53,7 @@ const Login = () => {
 
     return (
         <section className="login-body">
-            <div className="wrapper">
+            <div className="login-wrapper">
                 <div className="logo">
                     <img
                         src={vite}
