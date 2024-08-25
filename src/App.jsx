@@ -7,6 +7,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" Component={Home}></Route>
+        <Route path="/login"></Route>
       </Routes>
     </BrowserRouter>
   );
