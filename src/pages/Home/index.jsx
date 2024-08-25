@@ -9,7 +9,7 @@ const Home = () => {
             <NavBar />
             <BannerSection />
             <InformationSection />
-            <UniversitySection title="Quelques Etablissements"/>
+            <UniversitySection title="Quelques Etablissements recents"/>
         </>
     )
 }
