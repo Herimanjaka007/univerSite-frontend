@@ -1,0 +1,164 @@
+$gradient-start: #00c6ff;
+$gradient-end: #0072ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-colored {
+  color: $gradient-start;
+  text-shadow: 2px 2px 0 violet;
+  font-size: 1.5rem;
+}
+
+.banner {
+  overflow-x: hidden;
+}
+
+.nav-link {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+  padding: 0 5px;
+
+  ::after {
+    content: "";
+    position: absolute;
+    background-color: $gradient-start;
+    background-color: linear-gradient(45deg, $gradient-start 10%, $gradient-end 90%);
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -7px;
+  }
+
+  :hover {
+    color: #00c6ff;
+
+    &::after {
+      width: 100%;
+      transition: 0.3s;
+    }
+
+  }
+}
+
+.btn-login,
+.btn-submit,
+.btn-search,
+.navbar-toggler-icon,
+.input-group-text,
+.btn-custom .badge {
+  background-color: $gradient-end;
+}
+
+.btn-submit {
+  width: 100%;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.btn-login {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.input-group-text {
+  color: white;
+}
+
+.btn-outline-custom {
+  color: blueviolet;
+  background-color: white;
+  border: solid 2px blueviolet;
+  border-radius: 5px;
+  padding: 6.5px;
+}
+
+.btn-outline-custom-plus {
+  color: blueviolet;
+  background-color: white;
+  border: solid 2px blueviolet;
+  border-radius: 5px;
+  font-size: large;
+  padding: 7px 30px;
+}
+
+.banner-text {
+  font-size: 5rem;
+}
+
+.text,
+.ul-text {
+  font-size: 18px;
+}
+
+.information,
+.list,
+// .banner,
+footer {
+  // background-color: rgba(1, 1, 36, 0.932);
+  background: linear-gradient(45deg, #141d30, #243B55);
+  color: white;
+}
+
+.animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+.img-logo {
+  filter: grayscale(100%);
+
+  &:hover {
+    scale: 1.1;
+    filter: none;
+    cursor: pointer;
+  }
+}
+
+.li-list {
+  list-style: none;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1500px) {
+  .banner-text {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .description,
+  .custom-form {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .banner-text {
+    font-size: 2.5rem;
+  }
+}
