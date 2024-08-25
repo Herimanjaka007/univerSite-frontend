@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import "./index.scss";
 import Login from "./components/Login";
 import SignupForm from "./components/SignupForm";
+import Dashboard from "./pages/Dashboard";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('access') !== null;
@@ -18,7 +19,7 @@ const App = () => {
         <Route path="/signup" Component={SignupForm}></Route>
         <Route path="/dashboard" element={
           <PrivateRoute>
-
+            <Dashboard />
           </PrivateRoute>
         }></Route>
       </Routes>

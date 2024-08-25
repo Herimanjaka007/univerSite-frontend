@@ -4,7 +4,7 @@ import ButtonCustom from '../ButtonCustom';
 import { getUserId } from '../../utils/function';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../NavBar';
-import { URL } from '../../utils/url';
+import { URL as URL_BACKEND } from '../../utils/url';
 
 const SignupForm = () => {
     const [step, setStep] = useState(1);
@@ -50,12 +50,12 @@ const SignupForm = () => {
         if (photo) formData.append('profil_picture', photo);
 
         try {
-            const response = await fetch(`${URL}/users/create/`, {
+            const response = await fetch(`${URL_BACKEND}/users/create/`, {
                 method: 'POST',
                 body: formData,
             });
             if (response.ok) {
-                fetch(`${URL}users/token/`, {
+                fetch(`${URL_BACKEND}users/jwt/token/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -69,9 +69,9 @@ const SignupForm = () => {
                         getUserId(username).then(
                             id => {
                                 localStorage.setItem('user_id', id)
-                                navigate('/dashboard');
                             }
                         )
+                        navigate('/dashboard');
                     })
             } else {
                 setErrorMessage("Username deja prise");

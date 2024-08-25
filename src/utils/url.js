@@ -1,1 +1,1 @@
-export const URL = "http://megumi.pythonanywhere.com/"
+export const URL = "https://megumi.pythonanywhere.com/"

@@ -1,0 +1,116 @@
+$color_1: #fff;
+$color_2: #929ba1;
+$color_3: #242a30;
+$color_4: #2d353c;
+$color_5: #b2b2b2;
+$color_6: #999;
+$color_7: #000;
+$color_8: #575d63;
+$color_9: #6d767f;
+$color_10: #ff5b57;
+$background-color_1: #fff;
+$border-color_1: #4a4a4a;
+$border-right-color_1: #fff;
+
+// body {
+//     margin-top: 20px;
+//     background: #eee;
+// }
+
+.profile-header {
+    position: relative;
+    overflow: hidden;
+
+    .profile-header-cover {
+        background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #141d30, #243B55);
+            ;
+        }
+    }
+
+    .profile-header-content {
+        color: $color_1;
+        padding: 25px;
+        position: relative;
+    }
+
+    .profile-header-tab {
+        position: relative;
+        background: #fff;
+        list-style-type: none;
+        margin: -10px 0 0;
+        padding: 0 0 0 140px;
+        white-space: nowrap;
+        border-radius: 0;
+
+        >li {
+            display: inline-block;
+            margin: 0;
+
+            >a {
+                display: block;
+                color: $color_2;
+                line-height: 20px;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 12px;
+                border: none;
+            }
+
+            >a.active {
+                color: $color_3;
+            }
+        }
+
+        >li.active {
+            >a {
+                color: $color_3;
+            }
+        }
+    }
+}
+
+.profile-header-img {
+    float: left;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    margin: 0 0 -20px;
+    padding: 3px;
+    border-radius: 4px;
+    background: #fff;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.profile-header-info {
+    h4 {
+        font-weight: 500;
+        color: $color_1;
+    }
+}
+
+.profile-header-img+.profile-header-info {
+    margin-left: 140px;
+}

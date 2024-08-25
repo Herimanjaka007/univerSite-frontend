@@ -20,14 +20,13 @@ const Login = () => {
 
 
         try {
-            const response = await fetch(`${URL}/users/token/`, {
+            const response = await fetch(`${URL}/users/jwt/token/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ username, password }),
             });
-
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('access', data.access);
