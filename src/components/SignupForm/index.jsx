@@ -55,7 +55,7 @@ const SignupForm = () => {
                 body: formData,
             });
             if (response.ok) {
-                fetch(`${URL_BACKEND}users/jwt/token/`, {
+                fetch(`${URL_BACKEND}/users/jwt/token/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -69,9 +69,9 @@ const SignupForm = () => {
                         getUserId(username).then(
                             id => {
                                 localStorage.setItem('user_id', id)
+                                navigate('/dashboard');
                             }
                         )
-                        navigate('/dashboard');
                     })
             } else {
                 setErrorMessage("Username deja prise");
@@ -89,7 +89,7 @@ const SignupForm = () => {
         <>
             <NavBar />
             <div className="container mt-4">
-                <div className="card shadow">
+                <div className="card">
                     <div className="card-body my-4">
                         {step === 1 && (
                             <form >
