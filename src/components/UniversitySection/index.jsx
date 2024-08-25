@@ -15,7 +15,7 @@ const UniversitySection = ({ title }) => {
         }
 
         fetchData(`${URL}/users/`)
-            .then(data => setUniversity(data.slice(0, 4)));
+            .then(data => setUniversity(data.slice(2, 6)));
     }, [])
 
     return (

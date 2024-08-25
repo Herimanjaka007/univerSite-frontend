@@ -37,9 +37,9 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li className="nav-item ">
-                                <Link to="/university" className="nav-link text-muted">
+                                {/* <Link to="/university" className="nav-link text-muted">
                                     <p>Universités</p>
-                                </Link>
+                                </Link> */}
                             </li>
                         </ul>
                         <div className="d-flex gap-3 ms-auto">
