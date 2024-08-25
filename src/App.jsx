@@ -4,6 +4,7 @@ import "./index.scss";
 import Login from "./components/Login";
 import SignupForm from "./components/SignupForm";
 import Dashboard from "./pages/Dashboard";
+import ProfilEdit from "./components/ProfilEdit";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('access') !== null;
@@ -20,6 +21,11 @@ const App = () => {
         <Route path="/dashboard" element={
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        }></Route>
+        <Route path="/dashboard/edit" element={
+          <PrivateRoute>
+            <ProfilEdit></ProfilEdit>
           </PrivateRoute>
         }></Route>
       </Routes>
