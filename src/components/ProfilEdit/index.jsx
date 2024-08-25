@@ -3,7 +3,6 @@ import ButtonCustom from "../ButtonCustom";
 import { Link, useNavigate } from "react-router-dom";
 import { URL as URL_BACKEND } from "../../utils/url";
 import CardLoading from "../CardLoading";
-import Alert from "../Alert";
 
 const ProfilEdit = () => {
     const [photoUpload, setPhotoUpload] = useState(null);
@@ -24,7 +23,7 @@ const ProfilEdit = () => {
         setLoading(true);
         e.preventDefault();
         const formData = new FormData(e.target);
-        const [username, last_name, adress, email, phone_number , password] = [
+        const [username, last_name, adress, email, phone_number, password] = [
             formData.get("username"),
             formData.get("last_name"),
             formData.get("adress"),
@@ -39,9 +38,9 @@ const ProfilEdit = () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-            body: JSON.stringify({ username, last_name,email, phone_number, adress, password }),
+            body: JSON.stringify({ username, last_name, email, phone_number, adress, password }),
         }).then(res => {
-            if(res.ok)
+            if (res.ok)
                 navigate("/dashboard");
         }).finally(() => setLoading(false))
     }
