@@ -102,11 +102,11 @@ $gradient-end: #0072ff;
 }
 
 .information,
-.list{
-// background-color: rgba(1, 1, 36, 0.932);
-background: linear-gradient(45deg, #19293a, #111);
-// background: linear-gradient(45deg, #29323c, #485563);
-;
+.list {
+  // background-color: rgba(1, 1, 36, 0.932);
+  background: linear-gradient(45deg, #19293a, #111);
+  // background: linear-gradient(45deg, #29323c, #485563);
+  ;
 }
 
 .animated {
@@ -125,6 +125,14 @@ background: linear-gradient(45deg, #19293a, #111);
 
 .li-list {
   list-style: none;
+}
+
+.university-card {
+  transition: transform .2s ease;
+}
+
+.university-card:hover {
+  transform: scale(1.05);
 }
 
 @keyframes up-down {
