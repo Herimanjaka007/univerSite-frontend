@@ -4,11 +4,13 @@ import CardLoading from "../../components/CardLoading";
 import UniversityCard from "../../components/UniversityCard";
 import { URL } from "../../utils/url";
 import SearchBar from "../../components/SearchBar";
+import { useLocation } from "react-router-dom";
 
 const University = () => {
     const [universities, setUniversities] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState("");
+    const location = useLocation();
+    const [searchTerm, setSearchTerm] = useState(location?.state?.query ?? "");
     const universitiesPerPage = 4;
 
     useEffect(() => {
@@ -55,7 +57,7 @@ const University = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="row">
-                                    { 
+                                    {
                                         universities.length === 0 ?
                                             (
                                                 <>

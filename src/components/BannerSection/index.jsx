@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import banner from "../../assets/banner.svg";
 
 const BannerSection = () => {
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        navigate("/university", { state: { query: formData.get("keyword") } });
+    }
+
     return (
         <section className="banner bg-light" id="accueil">
             <div className="banner-content container-fluid-xl px-xl-5">
@@ -23,6 +31,7 @@ const BannerSection = () => {
                             method="get"
                             className="custom-form  pt-2 mb-lg-0 col-md-10 col-xl-10"
                             role="search"
+                            onSubmit={handleSubmit}
                         >
                             <div className="input-group input-group-lg">
                                 <input
@@ -38,58 +47,6 @@ const BannerSection = () => {
                                 </span>
                             </div>
                         </form>
-                        <div className="logo-university mt-xl-5 pt-xl-5 mt-lg-3 pt-4">
-                            <div className="row">
-                                <div className="col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/ge_it.jpg"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 80 }}
-                                    />
-                                </div>
-                                <div className=" col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/cntemad.jpg"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 100 }}
-                                    />
-                                </div>
-                                <div className="col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/inscae.png"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 80 }}
-                                    />
-                                </div>
-                                <div className=" col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/ucm.webp"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 80 }}
-                                    />
-                                </div>
-                                <div className="col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/UnivA.png"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 120 }}
-                                    />
-                                </div>
-                                <div className=" col-md-2 col-sm-4 col-6 d-flex align-items-center justify-content-center">
-                                    <img
-                                        src="./images/logo/iscam.png"
-                                        className="img-fluid img-logo"
-                                        alt=""
-                                        style={{ width: 80 }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div className="col-6 image-animated">
                         <img

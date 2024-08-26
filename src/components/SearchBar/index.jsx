@@ -1,9 +1,7 @@
-const SearchBar = ({searchTerm , handleChange}) => {
+const SearchBar = ({ searchTerm, handleChange }) => {
     return (
-        <form
-            method="get"
+        <div
             className="custom-form  pt-2 mb-lg-0 col-md-10 col-xl-10"
-            role="search"
         >
             <div className="input-group input-group-lg">
                 <input
@@ -20,7 +18,7 @@ const SearchBar = ({searchTerm , handleChange}) => {
                     <i className="fas fa-search" />
                 </span>
             </div>
-        </form>
+        </div>
     );
 }
 
