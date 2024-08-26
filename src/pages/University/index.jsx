@@ -23,9 +23,10 @@ const University = () => {
         fetchData(`${URL}/users/`)
             .then(data => data.slice(2).reverse())
             .then(data => setUniversities(
-                data.filter(university => `${university?.last_name} ${university?.adress} ${university.username}`
-                    .toLowerCase().includes(searchTerm.toLowerCase())
-                )))
+                data
+                    .filter(university => `${university?.last_name} ${university?.adress} ${university.username} ${university.first_name}`
+                        .toLowerCase().includes(searchTerm.toLowerCase().trim())
+                    )))
     }, [searchTerm])
 
     const indexOfLastUniversity = currentPage * universitiesPerPage;
@@ -52,7 +53,7 @@ const University = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 mb-3 ms-auto">
-                            <SearchBar searchTerm={searchTerm} handleChange={(e) => setSearchTerm(e.target.value.trim())} />
+                            <SearchBar searchTerm={searchTerm} handleChange={(e) => setSearchTerm(e.target.value)} />
                         </div>
                         <div className="row">
                             <div className="col-md-12">
