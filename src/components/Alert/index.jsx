@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Alert = ({ message, handler }) => {
     return (
         <div className="alert alert-danger d-flex">

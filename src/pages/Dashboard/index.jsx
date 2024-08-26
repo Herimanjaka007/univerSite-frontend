@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./index.scss";

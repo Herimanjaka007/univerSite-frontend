@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import UniversityCard from "../UniversityCard";
 import CardLoading from "../CardLoading";
 import { Link } from "react-router-dom";
 import { URL } from "../../utils/url";
-import ButtonCustom from "../ButtonCustom"; 
+import ButtonCustom from "../ButtonCustom";
 
 const UniversitySection = ({ title }) => {
     const [university, setUniversity] = useState([]);
@@ -48,7 +49,7 @@ const UniversitySection = ({ title }) => {
                 <div className="col-12 text-center mt-5">
                     <p className="">
                         <Link to="/university" className="">
-                            <ButtonCustom buttonText="Voir tous les universites" />
+                            <ButtonCustom buttonText="Voir tout les universités" />
                         </Link>
                     </p>
                 </div>

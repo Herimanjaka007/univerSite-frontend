@@ -1,4 +1,5 @@
-const CardLoading = ({width}) => {
+/* eslint-disable react/prop-types */
+const CardLoading = ({ width }) => {
     return (
         <div className="card" style={{ width: width || '18rem', margin: '10px' }}>
             <div className="card-body">
