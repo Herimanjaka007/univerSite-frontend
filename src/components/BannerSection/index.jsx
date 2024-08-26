@@ -1,11 +1,6 @@
 import banner from "../../assets/banner.svg";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const BannerSection = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const navigate = useNavigate();
-
     return (
         <section className="banner bg-light" id="accueil">
             <div className="banner-content container-fluid-xl px-xl-5">
