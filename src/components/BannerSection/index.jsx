@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import banner from "../../assets/banner.svg";
+import { useRef } from "react";
 
 const BannerSection = () => {
     const navigate = useNavigate();
+    const inputRef = useRef();
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        navigate("/university", { state: { query: formData.get("keyword") } });
+        navigate("/university", { state: { query: inputRef?.current?.value } });
     }
 
     return (
         <section className="banner bg-light" id="accueil">
-            <div className="banner-content container-fluid-xl px-xl-5">
+            <div className="banner-content container-fluid-xl px-xl-5 pb-5">
                 <div className="row">
                     <div className=" col-12 col-xl-6 py-2 mt-xl-5 px-5 description d-grid">
                         <h2 className="banner-text text-secondary col-md-12">
@@ -41,8 +42,9 @@ const BannerSection = () => {
                                     id="keyword"
                                     placeholder="Mot clé"
                                     aria-label="Search"
+                                    ref={inputRef}
                                 />
-                                <span className="input-group-text" id="basic-addon1">
+                                <span className="input-group-text" id="basic-addon1" onClick={handleSubmit} style={{cursor:"pointer"}}>
                                     <i className="fas fa-search" />
                                 </span>
                             </div>
@@ -57,8 +59,8 @@ const BannerSection = () => {
                         />
                     </div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
 
     );
 }
