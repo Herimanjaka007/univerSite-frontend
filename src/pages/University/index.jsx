@@ -3,10 +3,12 @@ import NavBar from "../../components/NavBar";
 import CardLoading from "../../components/CardLoading";
 import UniversityCard from "../../components/UniversityCard";
 import { URL } from "../../utils/url";
+import SearchBar from "../../components/SearchBar";
 
 const University = () => {
     const [universities, setUniversities] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("");
     const universitiesPerPage = 4;
 
     useEffect(() => {
@@ -17,8 +19,9 @@ const University = () => {
         }
 
         fetchData(`${URL}/users/`)
-            .then(data => setUniversities(data.slice(2).reverse()));
-    }, [])
+            .then(data => data.slice(2).reverse())
+            .then(data => setUniversities(data.filter(university => university?.last_name.toLowerCase().includes(searchTerm.toLowerCase()))))
+    }, [searchTerm])
 
     const indexOfLastUniversity = currentPage * universitiesPerPage;
     const indexOfFirstUniversity = indexOfLastUniversity - universitiesPerPage;
@@ -40,44 +43,47 @@ const University = () => {
     return (
         <>
             <NavBar />
-            <section className="list pb-5 pt-5" style={{ minHeight:"95vh"}}>
-            <div className="container">
-                <div className="row">
+            <section className="list pb-5 pt-5" style={{ minHeight: "95vh" }}>
+                <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
-                            <div className="row">
-                                {
-                                    universities.length == 0 ?
-                                        (
-                                            <>
-                                                <CardLoading />
-                                                <CardLoading />
-                                                <CardLoading />
-                                            </>
-                                        ) :
-                                        currentUniversities.length > 0 &&
-                                        currentUniversities.map(
-                                            univ => <UniversityCard
-                                                key={univ.id}
-                                                img={univ.profil_picture}
-                                                nom={univ.last_name}
-                                                adress={univ.adress}
-                                            />
-                                        )
-                                }
+                        <div className="col-md-6 mb-3 ms-auto">
+                            <SearchBar searchTerm={searchTerm} handleChange={(e) => setSearchTerm(e.target.value)} />
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="row">
+                                    {
+                                        universities.length == 0 ?
+                                            (
+                                                <>
+                                                    <CardLoading />
+                                                    <CardLoading />
+                                                    <CardLoading />
+                                                </>
+                                            ) :
+                                            currentUniversities.length > 0 &&
+                                            currentUniversities.map(
+                                                univ => <UniversityCard
+                                                    key={univ.id}
+                                                    img={univ.profil_picture}
+                                                    nom={univ.last_name}
+                                                    adress={univ.adress}
+                                                />
+                                            )
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <Pagination
-                totalPages={totalPages}
-                currentPage={currentPage}
-                paginate={pageNumber => setCurrentPage(pageNumber)}
-                handleNext={handleNext}
-                handlePrev={handlePrev}
-            />
-        </section >
+                <Pagination
+                    totalPages={totalPages}
+                    currentPage={currentPage}
+                    paginate={pageNumber => setCurrentPage(pageNumber)}
+                    handleNext={handleNext}
+                    handlePrev={handlePrev}
+                />
+            </section >
         </>
     );
 }
