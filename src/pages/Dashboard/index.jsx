@@ -79,19 +79,37 @@ const Dashboard = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <section className="container-info mt-4">
-                                <div className="card text-white list mb-3" style={{ maxWidth: '18rem' }}>
-                                    <div className="card-header d-flex align-items-center">
-                                        <i className="bi bi-geo-alt-fill me-2"></i>
-                                        <span>Location</span>
+                            <div className="row">
+                                <section className="container-info mt-4 col-xl-4">
+                                    <div className="card text-white list mb-3" style={{ maxWidth: '18rem' }}>
+                                        <div className="card-header d-flex align-items-center">
+                                            <i className="bi bi-geo-alt-fill me-2"></i>
+                                            <span>Location</span>
+                                        </div>
+                                        <div className="card-body">
+                                            <p className="card-text">
+                                                {user?.adress}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="card-body">
-                                        <p className="card-text">
-                                            {user?.adress}
-                                        </p>
-                                    </div>
-                                </div>
-                            </section>
+                                </section>
+                                {
+                                    user?.phone_number &&
+                                    (<section className="container-info mt-4 col-xl-4">
+                                        <div className="card text-white list mb-3" style={{ maxWidth: '18rem' }}>
+                                            <div className="card-header d-flex align-items-center">
+                                                <i className="bi bi-tel-alt-fill me-2"></i>
+                                                <span>Tel</span>
+                                            </div>
+                                            <div className="card-body">
+                                                <p className="card-text">
+                                                    {user?.phone_number}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </section>)
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ const ProfilEdit = () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-            body: JSON.stringify({ username, last_name, email, phone_number, adress, password }),
+            body: JSON.stringify({ username, last_name, email, phone_number, adress }),
         }).then(res => {
             if (res.ok)
                 navigate("/dashboard");
@@ -169,27 +169,6 @@ const ProfilEdit = () => {
                                                     defaultValue={user?.email}
                                                     name="email"
                                                 />
-                                            </div>
-                                            <div className="row gx-3 mb-3">
-
-                                            </div>
-                                            <div className="row gx-3 mb-3">
-                                                <div className="col-md-6">
-                                                    <label className="small mb-1" htmlFor="password">
-                                                        <strong>password *</strong>
-                                                    </label>
-                                                    <input
-                                                        className="form-control"
-                                                        id="password"
-                                                        type="tel"
-                                                        placeholder="Enter password"
-                                                        defaultValue=""
-                                                        name="password"
-                                                        maxLength="20"
-                                                        minLength="10"
-                                                        required
-                                                    />
-                                                </div>
                                             </div>
                                             <Link to="/dashboard">
                                                 <button className="btn btn-secondary me-5">Annuler</button>
