@@ -80,34 +80,14 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                <section className="container-info mt-4 col-xl-4">
-                                    <div className="card text-white list mb-3" style={{ maxWidth: '18rem' }}>
-                                        <div className="card-header d-flex align-items-center">
-                                            <i className="bi bi-geo-alt-fill me-2"></i>
-                                            <span>Location</span>
-                                        </div>
-                                        <div className="card-body">
-                                            <p className="card-text">
-                                                {user?.adress}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </section>
+                                <SectionInfo info={user?.adress} infoTitle="Adresse" classIcon="bi-geo-alt-fill" />
                                 {
                                     user?.phone_number &&
-                                    (<section className="container-info mt-4 col-xl-4">
-                                        <div className="card text-white list mb-3" style={{ maxWidth: '18rem' }}>
-                                            <div className="card-header d-flex align-items-center">
-                                                <i className="bi bi-tel-alt-fill me-2"></i>
-                                                <span>Tel</span>
-                                            </div>
-                                            <div className="card-body">
-                                                <p className="card-text">
-                                                    {user?.phone_number}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </section>)
+                                    <SectionInfo info={user?.phone_number} infoTitle="Telephone" classIcon="bi-telephone-fill" />
+                                }
+                                {
+                                    user?.first_name &&
+                                    <SectionInfo info={user?.first_name} infoTitle="Parcours ou Branches" classIcon="bi-info-circle-fill" />
                                 }
                             </div>
                         </div>
@@ -124,3 +104,21 @@ const Dashboard = () => {
 
 }
 export default Dashboard;
+
+const SectionInfo = ({ info, infoTitle, classIcon, maxWidth = '18rem' }) => {
+    return (
+        <section className="container-info mt-4 col-xl-4">
+            <div className="card text-white list mb-3" style={{ maxWidth: maxWidth }}>
+                <div className="card-header d-flex align-items-center">
+                    <i className={classIcon && `bi ${classIcon} me-2`}></i>
+                    <span>{infoTitle}</span>
+                </div>
+                <div className="card-body">
+                    <p className="card-text">
+                        {info}
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+}

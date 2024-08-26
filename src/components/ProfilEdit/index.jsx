@@ -23,8 +23,9 @@ const ProfilEdit = () => {
         setLoading(true);
         e.preventDefault();
         const formData = new FormData(e.target);
-        const [username, last_name, adress, email, phone_number, password] = [
+        const [username, first_name, last_name, adress, email, phone_number] = [
             formData.get("username"),
+            formData.get("first_name"),
             formData.get("last_name"),
             formData.get("adress"),
             formData.get("email"),
@@ -38,7 +39,7 @@ const ProfilEdit = () => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-            body: JSON.stringify({ username, last_name, email, phone_number, adress }),
+            body: JSON.stringify({ username, first_name, last_name, email, phone_number, adress }),
         }).then(res => {
             if (res.ok)
                 navigate("/dashboard");
@@ -97,23 +98,7 @@ const ProfilEdit = () => {
                                                 />
                                             </div>
                                             <div className="row gx-3 mb-3">
-                                                {
-                                                    user.type_user === "Etudiant" &&
-                                                    <div className="col-md-6">
-                                                        <label className="small mb-1" htmlFor="inputFirstName">
-                                                            First name
-                                                        </label>
-                                                        <input
-                                                            className="form-control"
-                                                            id="inputFirstName"
-                                                            type="text"
-                                                            placeholder="Enter your first name"
-                                                            defaultValue={user?.first_name}
-                                                            name="first_name"
-                                                        />
-                                                    </div>
-                                                }
-                                                <div className="col-md-6">
+                                                <div className="col-12">
                                                     <label className="small mb-1" htmlFor="inputLastName">
                                                         {user.type_user === "Edutiant" ? "Last name" : "Nom de l'etablissement"}
                                                     </label>
@@ -124,6 +109,20 @@ const ProfilEdit = () => {
                                                         placeholder="Enter your last name"
                                                         defaultValue={user?.last_name}
                                                         name="last_name"
+                                                    />
+                                                </div>
+                                                <div className="col-12">
+                                                    <label className="small mb-1" htmlFor="inputFirstName">
+                                                        Description
+                                                    </label>
+                                                    <input
+                                                        className="form-control"
+                                                        id="inputFirstName"
+                                                        type="text"
+                                                        placeholder={user?.type_user === "Etudiant" ? "Enter your first name" : "Les mots cle pour les parcours dans votre etablissements"}
+                                                        defaultValue={user?.first_name}
+                                                        name="first_name"
+                                                        maxLength="150"
                                                     />
                                                 </div>
                                             </div>
