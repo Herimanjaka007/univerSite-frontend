@@ -84,13 +84,13 @@ const ProfilEdit = () => {
                                     <div className="card-body">
                                         <form onSubmit={handleEditSubmit}>
                                             <div className="mb-3">
-                                                <label className="small mb-1" htmlFor="inputUsername">
+                                                {/* <label className="small mb-1" htmlFor="inputUsername">
                                                     Nom d&apos;utilisateur
-                                                </label>
+                                                </label> */}
                                                 <input
                                                     className="form-control"
                                                     id="inputUsername"
-                                                    type="text"
+                                                    type="hidden"
                                                     placeholder="username"
                                                     defaultValue={user?.username}
                                                     name="username"
@@ -98,7 +98,7 @@ const ProfilEdit = () => {
                                                 />
                                             </div>
                                             <div className="row gx-3 mb-3">
-                                                <div className="col-12">
+                                                <div className="col-12 mb-3">
                                                     <label className="small mb-1" htmlFor="inputLastName">
                                                         {user.type_user === "Edutiant" ? "Last name" : "Nom de l'etablissement"}
                                                     </label>
