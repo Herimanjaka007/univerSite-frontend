@@ -3,7 +3,7 @@ import UniversityCard from "../UniversityCard";
 import CardLoading from "../CardLoading";
 import { Link } from "react-router-dom";
 import { URL } from "../../utils/url";
-import ButtonCustom from "../ButtonCustom"; 
+import ButtonCustom from "../ButtonCustom";
 
 const UniversitySection = ({ title }) => {
     const [university, setUniversity] = useState([]);
@@ -29,12 +29,13 @@ const UniversitySection = ({ title }) => {
                 </div>
                 <div className="row mb-5">
                     {university.length !== 0 ?
-                        (university.map(univ => <UniversityCard
-                            key={univ.id}
-                            nom={univ.last_name}
-                            img={univ.profil_picture}
-                            adress={univ.adress}
-                        />)) :
+                        (university.map(univ => <Link key={univ.id} to={`/university/${univ.id}`} className="col-lg-3 col-md-6 mt-3 text-decoration-none">
+                            <UniversityCard
+                                nom={univ.last_name}
+                                img={univ.profil_picture}
+                                adress={univ.adress}
+                            />
+                        </Link>)) :
                         (
                             <>
                                 <CardLoading />

@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import ProfilEdit from "./components/ProfilEdit";
 import University from "./pages/University";
 import Error from "./pages/Error";
+import ProfilView from "./pages/ProfilView";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('access') !== null;
@@ -31,6 +32,7 @@ const App = () => {
             <ProfilEdit></ProfilEdit>
           </PrivateRoute>
         }></Route>
+        <Route path="/university/:idUniversity" Component={ProfilView}></Route>
         <Route path="*" Component={Error}></Route>
       </Routes>
     </BrowserRouter>

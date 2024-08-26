@@ -4,7 +4,7 @@ import CardLoading from "../../components/CardLoading";
 import UniversityCard from "../../components/UniversityCard";
 import { URL } from "../../utils/url";
 import SearchBar from "../../components/SearchBar";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const University = () => {
     const [universities, setUniversities] = useState([]);
@@ -69,12 +69,14 @@ const University = () => {
                                             ) :
                                             currentUniversities.length > 0 &&
                                             currentUniversities.map(
-                                                univ => <UniversityCard
-                                                    key={univ.id}
-                                                    img={univ.profil_picture}
-                                                    nom={univ.last_name}
-                                                    adress={univ.adress}
-                                                />
+                                                univ =>
+                                                    <Link key={univ.id} to={`/university/${univ.id}`} className="col-lg-3 col-md-6 mt-3 text-decoration-none">
+                                                        <UniversityCard
+                                                            img={univ.profil_picture}
+                                                            nom={univ.last_name}
+                                                            adress={univ.adress}
+                                                        />
+                                                    </Link>
                                             )
                                     }
                                 </div>

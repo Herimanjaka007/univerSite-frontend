@@ -1,7 +1,5 @@
 const UniversityCard = ({ img, nom, adress }) => {
     return (
-
-        <div className="col-lg-3 col-md-6 mt-3">
             <div className="card p-3">
                 <img
                     src={img}
@@ -23,8 +21,6 @@ const UniversityCard = ({ img, nom, adress }) => {
                     </li>
                 </ul>
             </div>
-        </div>
-
     );
 }
 
