@@ -56,7 +56,7 @@ const University = () => {
                             <div className="col-md-12">
                                 <div className="row">
                                     { 
-                                        universities === 0 ?
+                                        universities.length === 0 ?
                                             (
                                                 <>
                                                     <CardLoading />
