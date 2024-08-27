@@ -12,7 +12,7 @@ const University = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const location = useLocation();
     const [searchTerm, setSearchTerm] = useState(location?.state?.query ?? "");
-    const universitiesPerPage = 4;
+    const universitiesPerPage = 8;
 
     useEffect(() => {
         const fetchData = async (url) => {
