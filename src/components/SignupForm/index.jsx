@@ -21,7 +21,7 @@ const SignupForm = () => {
 
     useEffect(() => {
         if (step === 1) {
-            const pattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+            const pattern = /^[\w\\.-]+@[a-zA-Z\d\\.-]+\.[a-zA-Z]{2,}$/;
             const emailValid = pattern.test(email);
             setIsNextEnabled(schoolName !== '' && address !== '' && emailValid);
         }
@@ -93,8 +93,8 @@ const SignupForm = () => {
                     <div className="card-body my-4">
                         {step === 1 && (
                             <form >
-                                <h2 className="card-title">Étape 1</h2>
-                                <div className="mb-3">
+                                <h2 className="card-title">Étape 1/3</h2>
+                                <div className="mb-3 mt-5">
                                     <label htmlFor="schoolName" className="form-label">Nom de l&apos;école</label>
                                     <input
                                         type="text"
@@ -139,8 +139,8 @@ const SignupForm = () => {
 
                         {step === 2 && (
                             <div>
-                                <h2 className="card-title">Étape 2</h2>
-                                <div className="mb-3">
+                                <h2 className="card-title">Étape 2/3</h2>
+                                <div className="mb-3 mt-5">
                                     <label htmlFor="photo" className="form-label">Télécharger la photo ou logo de votre ecole</label>
                                     <input
                                         type="file"
@@ -179,11 +179,11 @@ const SignupForm = () => {
 
                         {step === 3 && (
                             <div>
-                                <h2 className="card-title">Étape 2</h2>
+                                <h2 className="card-title">Étape 3/3</h2>
                                 {errorMessage &&
                                     <Alert message="Username deja prise" handler={() => setErrorMessage("")} />
                                 }
-                                <div className="mb-3">
+                                <div className="mb-3 mt-5">
                                     <label htmlFor="username" className="form-label">Nom d&apos;utilisateur ou sigle (pour se connecter)</label>
                                     <input
                                         type="text"

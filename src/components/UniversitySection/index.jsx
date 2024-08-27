@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import UniversityCard from "../UniversityCard";
 import CardLoading from "../CardLoading";
@@ -49,7 +50,7 @@ const UniversitySection = ({ title }) => {
                 <div className="col-12 text-center mt-5">
                     <p className="">
                         <Link to="/university" className="">
-                            <ButtonCustom buttonText="Voir tous les universites" />
+                            <ButtonCustom buttonText="Voir tout les universités" />
                         </Link>
                     </p>
                 </div>

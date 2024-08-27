@@ -43,7 +43,7 @@ const Login = () => {
                 setError("Nom d'utilisateur ou Mot de passe invalide");
             }
         } catch {
-            setError('Erreur de reseau, Veuillez ressayez ulterieurement');
+            setError('Erreur de reseau, Veuillez réessayez ultérieurement');
         } finally {
             setLoading(false);
         }
@@ -61,17 +61,22 @@ const Login = () => {
                     />
                 </div>
                 <div className="text-center mt-4 name">UniverSite</div>
-                {error && <Alert message={error} handler={() => setError(null)} />}
                 <form className="p-3 mt-3" onSubmit={handleSubmit}>
                     <div className="form-field d-flex align-items-center">
-                        <span className="far fa-user" />
+                        <span className="far fa-user ms-2" />
                         <input type="text" name="username" id="userName" placeholder="Nom d'utilisateur" />
                     </div>
                     <div className="form-field d-flex align-items-center">
+<<<<<<< HEAD
                         <span className="fas fa-key" />
                         <input type={!pwdVisible ? "password" : "text"} name="password" id="pwd" placeholder="Mot de passe" />
                         <span className="show" onClick={() => setPwdVisible(!pwdVisible)}><i className={pwdVisible ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i></span>
+=======
+                        <span className="fas fa-key ms-2" />
+                        <input type="password" name="password" id="pwd" placeholder="Mot de passe" />
+>>>>>>> 2ba5e9dc5747629006f6169ac8c668bc92401e61
                     </div>
+                    {error && <Alert message={error} handler={() => setError(null)} />}
                     <button className="btn__login mt-3">
                         {loading ?
                             (<div className="spinner-border text-light" role="status">
