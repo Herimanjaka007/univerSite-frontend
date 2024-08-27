@@ -67,11 +67,9 @@ const Login = () => {
                         <input type="text" name="username" id="userName" placeholder="Nom d'utilisateur" />
                     </div>
                     <div className="form-field d-flex align-items-center">
-                        <span className="fas fa-key" />
+                        <span className="fas fa-key ms-2" />
                         <input type={!pwdVisible ? "password" : "text"} name="password" id="pwd" placeholder="Mot de passe" />
                         <span className="show" onClick={() => setPwdVisible(!pwdVisible)}><i className={pwdVisible ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i></span>
-                        <span className="fas fa-key ms-2" />
-                        <input type="password" name="password" id="pwd" placeholder="Mot de passe" />
                     </div>
                     {error && <Alert message={error} handler={() => setError(null)} />}
                     <button className="btn__login mt-3">
