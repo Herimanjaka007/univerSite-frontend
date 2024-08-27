@@ -42,7 +42,7 @@ const Login = () => {
                 setError("Nom d'utilisateur ou Mot de passe invalide");
             }
         } catch {
-            setError('Erreur de reseau, Veuillez ressayez ulterieurement');
+            setError('Erreur de reseau, Veuillez réessayez ultérieurement');
         } finally {
             setLoading(false);
         }
@@ -60,16 +60,16 @@ const Login = () => {
                     />
                 </div>
                 <div className="text-center mt-4 name">UniverSite</div>
-                {error && <Alert message={error} handler={() => setError(null)} />}
                 <form className="p-3 mt-3" onSubmit={handleSubmit}>
                     <div className="form-field d-flex align-items-center">
-                        <span className="far fa-user" />
+                        <span className="far fa-user ms-2" />
                         <input type="text" name="username" id="userName" placeholder="Nom d'utilisateur" />
                     </div>
                     <div className="form-field d-flex align-items-center">
-                        <span className="fas fa-key" />
+                        <span className="fas fa-key ms-2" />
                         <input type="password" name="password" id="pwd" placeholder="Mot de passe" />
                     </div>
+                    {error && <Alert message={error} handler={() => setError(null)} />}
                     <button className="btn__login mt-3">
                         {loading ?
                             (<div className="spinner-border text-light" role="status">

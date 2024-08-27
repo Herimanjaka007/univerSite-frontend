@@ -5,7 +5,7 @@ import ButtonCustom from '../ButtonCustom';
 
 const NavBar = () => {
     return (
-        <div className="content">
+        <div className="content sticky-top bg-light">
             <nav className="navbar navbar-bar navbar-expand-lg border-bottom px-5 py-2 shadow-sm">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
@@ -44,10 +44,8 @@ const NavBar = () => {
                         </ul>
                         <div className="d-flex gap-3 ms-auto">
                             <Link to="/signup">
-                                <button
-                                    className="btn btn-secondary"
-                                >
-                                    inscris votre etablissement
+                                <button className="btn btn-secondary">
+                                    Inscrire mon établissement
                                 </button>
                             </Link>
                             <Link to="/login">

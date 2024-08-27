@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import faqImage from "../../assets/faq_graphic.svg";
 import bg from "../../assets/white-wave-bg.svg";
 import { Link } from "react-router-dom";
@@ -8,12 +9,12 @@ const InformationSection = () => {
         <>
             <section className="information pt-5" id="apropos">
                 <div className="container">
-                    <div className="col-12 text-center">
+                    <div className="col-12 text-center mt-3">
                         <h1 className="text-white">
                             <strong>À propos</strong>
                         </h1>
                     </div>
-                    <div className="row container mt-2 text-light py-5">
+                    <div className="row container my-3   text-light py-5">
                         <div className="col-md-12 col-sm-12 mt-3">
                             <p className="text text-justify fs-5">
                                 Bienvenue sur UniverSite, votre compagnon numérique pour explorer
@@ -35,7 +36,7 @@ const InformationSection = () => {
                                     professionnelles
                                 </li>
                             </ul>
-                            <Link to="/signup"><ButtonCustom buttonText="J'inscris mon etablissement" /></Link>
+                            <Link to="/signup"><ButtonCustom buttonText="Ajouter mon etablissement" /></Link>
                         </div>
                         {/* <div className="col-md-6 col-sm-12 mt-3">
                         <p className="text">
@@ -56,7 +57,7 @@ const InformationSection = () => {
                 </div>
                 <img src={bg} alt="ito leizy" className="w-100" />
             </section>
-            <section className="faq-section section-padding py-5" id="section_4" style={{ background: "white " }}>
+            <section className="faq-section section-padding py-5 my-5" id="section_4" style={{ background: "white " }}>
                 <div className="container">
                     <div className="row">
                         <div className="clearfix" />

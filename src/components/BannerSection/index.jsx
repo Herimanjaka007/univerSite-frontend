@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useNavigate } from "react-router-dom";
 import banner from "../../assets/banner.svg";
 import { useRef } from "react";
@@ -11,14 +12,14 @@ const BannerSection = () => {
     }
 
     return (
-        <section className="banner bg-light" id="accueil">
+        <section className="banner" id="accueil">
             <div className="banner-content container-fluid-xl px-xl-5 pb-5">
                 <div className="row">
-                    <div className=" col-12 col-xl-6 py-2 mt-xl-5 px-5 description d-grid">
-                        <h2 className="banner-text text-secondary col-md-12">
+                    <div className=" col-12 col-xl-6 py-2 mt-xl-5 px-5 pt-xl-5 description">
+                        <h2 className="banner-text text-secondary col-md-12 mt-xl-5">
                             <strong>Préparez votre étude supérieure</strong>
                         </h2>
-                        <p className="text-muted mt-2l-3 col-md-12 fs-5 my-1">
+                        <p className="text-muted mt-xl-3 col-md-12 fs-5 my-1">
                             Parmi les centaines d'universités à Madagascar, découvrer celle qui
                             vous corresponde avec un large choix de parcours. Avec
                             <span className="text-colored">
@@ -30,7 +31,7 @@ const BannerSection = () => {
                         </p>
                         <form
                             method="get"
-                            className="custom-form  pt-2 mb-lg-0 col-md-10 col-xl-10"
+                            className="custom-form  pt-2 mb-lg-0 col-md-10 col-xl-10 mt-xl-5"
                             role="search"
                             onSubmit={handleSubmit}
                         >
@@ -44,7 +45,7 @@ const BannerSection = () => {
                                     aria-label="Search"
                                     ref={inputRef}
                                 />
-                                <span className="input-group-text" id="basic-addon1" onClick={handleSubmit} style={{cursor:"pointer"}}>
+                                <span className="input-group-text" id="basic-addon1" onClick={handleSubmit} style={{ cursor: "pointer" }}>
                                     <i className="fas fa-search" />
                                 </span>
                             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const UniversityCard = ({ img, nom, adress }) => {
     return (
             <div className="card p-3 university-card">
