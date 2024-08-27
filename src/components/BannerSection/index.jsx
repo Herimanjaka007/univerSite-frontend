@@ -15,7 +15,7 @@ const BannerSection = () => {
         <section className="banner" id="accueil">
             <div className="banner-content container-fluid-xl px-xl-5 pb-5">
                 <div className="row">
-                    <div className=" col-12 col-xl-6 py-2 mt-xl-5 px-5 pt-xl-5 description">
+                    <div className=" col-12 col-xl-6 py-2 mt-5 px-5 pt-xl-5 description">
                         <h2 className="banner-text text-secondary col-md-12 mt-xl-5">
                             <strong>Préparez votre étude supérieure</strong>
                         </h2>
