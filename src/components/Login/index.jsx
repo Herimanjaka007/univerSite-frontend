@@ -9,6 +9,7 @@ import { URL } from "../../utils/url";
 const Login = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [pwdVisible, setPwdVisible] = useState(false);
     const navigate = useNavigate();
 
 
@@ -68,7 +69,8 @@ const Login = () => {
                     </div>
                     <div className="form-field d-flex align-items-center">
                         <span className="fas fa-key" />
-                        <input type="password" name="password" id="pwd" placeholder="Mot de passe" />
+                        <input type={!pwdVisible ? "password" : "text"} name="password" id="pwd" placeholder="Mot de passe" />
+                        <span className="show" onClick={() => setPwdVisible(!pwdVisible)}><i className={pwdVisible ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"}></i></span>
                     </div>
                     <button className="btn__login mt-3">
                         {loading ?

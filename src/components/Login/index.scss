@@ -39,6 +39,10 @@
         .fas {
             color: #555;
         }
+        .show{
+            transform: translateX(-15px);
+            cursor: pointer;
+        }
     }
 
     .btn__login {
